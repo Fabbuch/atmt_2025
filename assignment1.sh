@@ -50,7 +50,8 @@ python train.py \
     --dim-feedforward-decoder 1024 \
     --max-seq-len 300 \
     --n-encoder-layers 3 \
-    --n-decoder-layers 3 
+    --n-decoder-layers 3 \
+    --cuda
 
 # TRANSLATE
 python translate.py \
@@ -60,4 +61,5 @@ python translate.py \
     --tgt-tokenizer cz-en/tokenizers/en-bpe-8000.model \
     --checkpoint-path cz-en/checkpoints/checkpoint_best.pt \
     --output cz-en/output.txt \
-    --max-len 300
+    --max-len 300 \
+    --cuda
