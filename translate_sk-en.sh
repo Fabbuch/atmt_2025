@@ -1,6 +1,6 @@
 #!/usr/bin/bash -l
 #SBATCH --partition teaching
-#SBATCH --time=4:0:0
+#SBATCH --time=4:30:0
 #SBATCH --ntasks=1
 #SBATCH --mem=16GB
 #SBATCH --cpus-per-task=1
@@ -21,4 +21,6 @@ python translate.py \
     --tgt-tokenizer cz-en/tokenizers/en-bpe-8000.model \
     --checkpoint-path cz-en/checkpoints/checkpoint_best.pt \
     --output sk-en_output.txt \
-    --max-len 300
+    --max-len 300 \
+    --bleu \
+    --reference data_sk-en/DGT.en-sk_trim.en
